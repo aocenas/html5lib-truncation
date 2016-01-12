@@ -19,7 +19,7 @@ def truncate_html(html, *args, **kwargs):
     else:
         etree = html5lib.parse(html)
 
-    walker = html5lib.getTreeWalker('etree')
+    walker = html5lib.getTreeWalker('lxml')
 
     stream = walker(etree)
     stream = TruncationFilter(stream, *args, **kwargs)
